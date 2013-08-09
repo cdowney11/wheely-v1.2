@@ -19,10 +19,7 @@ public class MainActivity extends Activity {
     private GPSUtil gpsUtil = null;
     private TextView textViewLocation;
     private Button buttonSearchNearby;
-
-    /**
-     * Called when the activity is first created.
-     */
+    
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
