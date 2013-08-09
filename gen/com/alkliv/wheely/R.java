@@ -275,6 +275,12 @@ containing a value of this type.
         public static final int location_client_ulr_inactive_age_unknown=0x7f060013;
         public static final int location_client_ulr_inactive_unknown_restriction=0x7f060014;
     }
+    public static final class style {
+        /**  Any customizations for your app running on pre-3.0 devices here 
+ Any customizations for your app running on 3.0+ devices here 
+         */
+        public static final int MyAppTheme=0x7f070000;
+    }
     public static final class styleable {
         /** Attributes that can be used with a MapAttrs.
            <p>Includes the following attributes:</p>
