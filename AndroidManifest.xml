@@ -41,11 +41,5 @@
         <meta-data
                 android:name="com.google.android.maps.v2.API_KEY"
                 android:value="AIzaSyBL7lE1Znk_ZHWxht16tww129-53Ltja18"/>
-				<!--old default api key AIzaSyDTCRsZ717LHRyH_Z1rmvPEChlP0Wd0LcI -->
-
     </application>
-
-    
-
-
 </manifest>
