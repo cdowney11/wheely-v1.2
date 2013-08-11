@@ -169,17 +169,27 @@ containing a value of this type.
         public static final int common_signin_btn_text_normal_light=0x7f020015;
         public static final int common_signin_btn_text_pressed_dark=0x7f020016;
         public static final int common_signin_btn_text_pressed_light=0x7f020017;
-        public static final int ic_launcher=0x7f020018;
-        public static final int markergreen=0x7f020019;
-        public static final int markerred=0x7f02001a;
+        public static final int ic_action_search=0x7f020018;
+        public static final int ic_launcher=0x7f020019;
+        public static final int ic_navigation_refresh=0x7f02001a;
+        public static final int location_map=0x7f02001b;
+        public static final int location_place=0x7f02001c;
+        public static final int markergreen=0x7f02001d;
+        public static final int markerred=0x7f02001e;
     }
     public static final class id {
+        public static final int action_settings=0x7f050012;
         public static final int buttonSearchNearby=0x7f05000a;
         public static final int buttonShowOnMaps=0x7f050005;
+        public static final int help=0x7f050010;
         public static final int hybrid=0x7f050004;
         public static final int map=0x7f050006;
+        public static final int new_search=0x7f05000f;
         public static final int none=0x7f050000;
         public static final int normal=0x7f050001;
+        public static final int places_map=0x7f050014;
+        public static final int places_nearby=0x7f050013;
+        public static final int refresh=0x7f050011;
         public static final int satellite=0x7f050002;
         public static final int terrain=0x7f050003;
         public static final int textView=0x7f05000b;
@@ -197,7 +207,12 @@ containing a value of this type.
         public static final int main=0x7f030003;
         public static final int single_place=0x7f030004;
     }
+    public static final class menu {
+        public static final int app_menu=0x7f080000;
+        public static final int welcome=0x7f080001;
+    }
     public static final class string {
+        public static final int action_settings=0x7f060016;
         public static final int app_name=0x7f060015;
         /**   Title for notification shown when GooglePlayServices is unavailable [CHAR LIMIT=70] 
          */
@@ -263,6 +278,9 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static final int common_signin_button_text_long=0x7f06000e;
+        public static final int hello_world=0x7f060017;
+        public static final int help=0x7f060018;
+        public static final int httptestlist_textview=0x7f060021;
         /**  Location client code resources (prefix with location_client) 
 
         Begin strings for location.reporting
@@ -274,6 +292,15 @@ containing a value of this type.
         public static final int location_client_ulr_inactive_age_under_13=0x7f060012;
         public static final int location_client_ulr_inactive_age_unknown=0x7f060013;
         public static final int location_client_ulr_inactive_unknown_restriction=0x7f060014;
+        public static final int new_search=0x7f060019;
+        public static final int places_map=0x7f06001e;
+        public static final int places_nearby=0x7f06001f;
+        public static final int refresh=0x7f06001a;
+        public static final int title_activity_places_list=0x7f060020;
+        public static final int title_activity_places_map=0x7f06001b;
+        public static final int title_activity_temp=0x7f060022;
+        public static final int title_activity_welcome=0x7f06001c;
+        public static final int welcome=0x7f06001d;
     }
     public static final class style {
         /**  Any customizations for your app running on pre-3.0 devices here 

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+	<item android:id="@+id/new_search"
+          android:icon="@drawable/ic_action_search"
+          android:title="@string/new_search"
+          android:showAsAction="ifRoom"/>
+    <item android:id="@+id/help"
+          android:icon="@drawable/ic_launcher"
+          android:title="@string/help" />
+    <item android:id="@+id/refresh"
+          android:icon="@drawable/ic_navigation_refresh"
+          android:title="@string/refresh"
+          android:showAsAction="ifRoom" />
+    
+</menu>

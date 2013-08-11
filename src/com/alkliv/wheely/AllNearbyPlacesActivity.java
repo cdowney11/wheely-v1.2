@@ -104,7 +104,7 @@ public class AllNearbyPlacesActivity extends ListActivity {
             List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
             nameValuePairs.add(new BasicNameValuePair("latitude", String.valueOf(params[0])));
             nameValuePairs.add(new BasicNameValuePair("longitude", String.valueOf(params[1])));
-            nameValuePairs.add(new BasicNameValuePair("radius", "2000"));
+            nameValuePairs.add(new BasicNameValuePair("radius", "100"));
             nameValuePairs.add(new BasicNameValuePair("types", "cafe|restaurant|store"));
             JSONHttpClient jsonHttpClient = new JSONHttpClient();
             googlePlaces = jsonHttpClient.Get(ConstantValues.GOOGLE_PLACES_URL, nameValuePairs, GooglePlace[].class);

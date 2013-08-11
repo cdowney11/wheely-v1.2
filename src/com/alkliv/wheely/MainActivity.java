@@ -1,5 +1,6 @@
 package com.alkliv.wheely;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -7,10 +8,15 @@ import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.hintdesk.core.CoreConstants;
 import com.hintdesk.core.listeners.GPSUtilLocationListener;
 import com.hintdesk.core.utils.GPSUtil;
@@ -27,7 +33,19 @@ public class MainActivity extends Activity {
 
         initializeComponent();
         initializeVariables();
+        ActionBar ab = getActionBar(); 
+		ab.setDisplayShowTitleEnabled(false);
+		
     }
+    
+    
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.welcome, menu);
+        return true;
+    }
+    
 
     private void initializeVariables() {
         gpsUtil = new GPSUtil(MainActivity.this);
@@ -105,6 +123,34 @@ public class MainActivity extends Activity {
         gpsUtil.stop();
         super.onDestroy();    //To change body of overridden methods use File | Settings | File Templates.
     }
+    
+	public void onGroupItemClick(MenuItem item) {
+	    // One of the group items (using the onClick attribute) was clicked
+	    // The item parameter passed here indicates which item it is
+	    // All other menu item clicks are handled by onOptionsItemSelected()
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    // Handle item selection
+	    switch (item.getItemId()) {
+	        case R.id.places_map:
+	        	Toast.makeText(this, "Showing Places on Map", Toast.LENGTH_SHORT)
+	        	.show();
+	            return true;
+	        case R.id.places_nearby:
+	        	Toast.makeText(this, "Places Nearby List", Toast.LENGTH_SHORT)
+	            .show();
+	            Intent intent_list = new Intent(this, AllNearbyPlacesActivity.class );
+	            intent_list.putExtra(ConstantValues.EXTRA_LATITUDE, gpsUtil.getLocation().getLatitude());
+	            intent_list.putExtra(ConstantValues.EXTRA_LONGITUDE,gpsUtil.getLocation().getLongitude());
+	            startActivity(intent_list);
+	            return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
+	}
+
 
 
 }
