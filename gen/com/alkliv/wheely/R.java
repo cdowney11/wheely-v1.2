@@ -178,18 +178,19 @@ containing a value of this type.
         public static final int markerred=0x7f02001e;
     }
     public static final class id {
-        public static final int action_settings=0x7f050012;
+        public static final int action_settings=0x7f050013;
         public static final int buttonSearchNearby=0x7f05000a;
         public static final int buttonShowOnMaps=0x7f050005;
-        public static final int help=0x7f050010;
+        public static final int button_sd=0x7f05000f;
+        public static final int help=0x7f050011;
         public static final int hybrid=0x7f050004;
         public static final int map=0x7f050006;
-        public static final int new_search=0x7f05000f;
+        public static final int new_search=0x7f050010;
         public static final int none=0x7f050000;
         public static final int normal=0x7f050001;
-        public static final int places_map=0x7f050014;
-        public static final int places_nearby=0x7f050013;
-        public static final int refresh=0x7f050011;
+        public static final int places_map=0x7f050015;
+        public static final int places_nearby=0x7f050014;
+        public static final int refresh=0x7f050012;
         public static final int satellite=0x7f050002;
         public static final int terrain=0x7f050003;
         public static final int textView=0x7f05000b;
@@ -296,6 +297,7 @@ containing a value of this type.
         public static final int places_map=0x7f06001e;
         public static final int places_nearby=0x7f06001f;
         public static final int refresh=0x7f06001a;
+        public static final int self_destruct=0x7f060023;
         public static final int title_activity_places_list=0x7f060020;
         public static final int title_activity_places_map=0x7f06001b;
         public static final int title_activity_temp=0x7f060022;

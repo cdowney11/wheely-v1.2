@@ -15,5 +15,6 @@
     <string name="title_activity_places_list">PlacesListActivity</string>
     <string name="httptestlist_textview">Please Wait...</string>
     <string name="title_activity_temp">TempActivity</string>
+    <string name="self_destruct">Self Destruct</string>
     
 </resources>

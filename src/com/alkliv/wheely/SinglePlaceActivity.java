@@ -1,9 +1,16 @@
 package com.alkliv.wheely;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 
 import android.app.Activity;
@@ -11,7 +18,11 @@ import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.alkliv.wheely.vo.GooglePlaceDetails;
 import com.hintdesk.core.utils.JSONHttpClient;
@@ -25,14 +36,73 @@ import com.hintdesk.core.utils.JSONHttpClient;
  */
 public class SinglePlaceActivity extends Activity {
     private ProgressDialog progressDialog;
-
+    public String TAG = "alkis";
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);    //To change body of overridden methods use File | Settings | File Templates.
         setContentView(R.layout.single_place);
-
+        Log.d(TAG, "after setContentView");
         new LoadPlaceDetailsTask().execute(getIntent().getStringExtra(ConstantValues.EXTRA_REFERENCE));
+    
+        final Button button = (Button) findViewById(R.id.button_sd);
+        Log.d(TAG, "Before setOnClickListener");
+        button.setOnClickListener(new View.OnClickListener() {
+        	
+            public void onClick(View v) {
+            	//Perform an action on click
+            	Log.d(TAG, "inside onClick(View v)");
+            	postData();
+            	Log.d(TAG, "after calling postData()");
+            }
+        });
     }
+    
+   public void postData() {
+        
+            Log.d(TAG, "just got inside postData()");
+            Thread thread = new Thread(new Runnable(){
+                @Override
+                public void run() {
+                	Log.d(TAG, "just got inside run()");
+                    try {
+                    	Log.d(TAG, "just got inside run's TRY");
+                    	// Create a new HttpClient and Post Header
+                        HttpClient httpclient = new DefaultHttpClient();
+                        HttpPost httppost = new HttpPost("http://46.105.49.245/androidconnector/insertplace.php");
+
+                        try {
+                        	Log.d(TAG, "try adding DATA - list value pairs");
+                            // Add your data
+                            List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
+                            nameValuePairs.add(new BasicNameValuePair("placeid", "155"));
+                            nameValuePairs.add(new BasicNameValuePair("accessibility", "3"));
+                            httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+                        //Your code goes here
+                    	 // Execute HTTP Post Request
+                            Log.d(TAG, "just before response");
+                        HttpResponse response = httpclient.execute(httppost);
+                        Log.d(TAG, "after response");
+                        
+                        //response.getEntity();
+                        //Toast toast = Toast.makeText(getApplicationContext(), (CharSequence) httppost.getEntity(),  Toast.LENGTH_SHORT);
+                        //toast.show();
+                        
+                        } catch (ClientProtocolException e) {
+                            // TODO Auto-generated catch block
+                        } catch (IOException e) {
+                            // TODO Auto-generated catch block
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+            Log.d(TAG, "before start thread");
+            thread.start(); 
+            Log.d(TAG, "after start thread");
+
+    } 
 
     class LoadPlaceDetailsTask extends AsyncTask<String, String, GooglePlaceDetails> {
         @Override
@@ -76,5 +146,11 @@ public class SinglePlaceActivity extends Activity {
             nameValuePairs.add(new BasicNameValuePair("reference", params[0]));
             return jsonHttpClient.Get(ConstantValues.GOOGLE_PLACES_URL, nameValuePairs, GooglePlaceDetails.class);
         }
+        
+        public void selfDestruct(View view) {
+            // Kabloey
+        }
+        
+        
     }
 }
