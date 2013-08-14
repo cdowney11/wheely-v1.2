@@ -13,8 +13,9 @@
     <string name="places_map">Show Places on Map</string>
     <string name="places_nearby">Show Places Nearby</string>
     <string name="title_activity_places_list">PlacesListActivity</string>
-    <string name="httptestlist_textview">Please Wait...</string>
     <string name="title_activity_temp">TempActivity</string>
     <string name="self_destruct">Self Destruct</string>
+    <string name="redflag">redflag</string>
+    <string name="greenflag">greenflag</string>
     
 </resources>

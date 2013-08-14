@@ -40,4 +40,21 @@
 	     android:text="@string/self_destruct"
 	     android:onClick="selfDestruct" />
 	
+	<ImageButton
+        android:id="@+id/btn_1"
+        android:contentDescription="@string/redflag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/circle_red_dark"
+        />
+
+	<ImageButton
+	    android:id="@+id/btn_2"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="2dp"
+	    android:background="@drawable/circle_green_dark"
+	    android:contentDescription="@string/greenflag" />
+	
 </LinearLayout>

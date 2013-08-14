@@ -21,6 +21,7 @@ import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,9 +45,12 @@ public class SinglePlaceActivity extends Activity {
         setContentView(R.layout.single_place);
         Log.d(TAG, "after setContentView");
         new LoadPlaceDetailsTask().execute(getIntent().getStringExtra(ConstantValues.EXTRA_REFERENCE));
-    
+        
+        final ImageButton btn1=(ImageButton)findViewById(R.id.btn_1);
+        final ImageButton btn2=(ImageButton)findViewById(R.id.btn_2);
         final Button button = (Button) findViewById(R.id.button_sd);
         Log.d(TAG, "Before setOnClickListener");
+        
         button.setOnClickListener(new View.OnClickListener() {
         	
             public void onClick(View v) {
@@ -55,7 +59,31 @@ public class SinglePlaceActivity extends Activity {
             	postData();
             	Log.d(TAG, "after calling postData()");
             }
+        }); //end of button set on click
+
+
+        btn1.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                // Your Code Here....
+            	Log.d(TAG, "inside on SECOND onClick(View v)");
+            	Toast toast = Toast.makeText(getApplicationContext(), "Σημειώσατε το μέρος ως μη προσεγγίσιμο. :-(",  Toast.LENGTH_SHORT);
+                toast.show();
+            }
         });
+        
+        btn2.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                // Your Code Here....
+            	Log.d(TAG, "inside on THIRD onClick(View v)");
+            	Toast toast = Toast.makeText(getApplicationContext(), "Σημειώσατε το μέρος ως προσεγγίσιμο! :-)",  Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        });
+    
     }
     
    public void postData() {
@@ -153,4 +181,8 @@ public class SinglePlaceActivity extends Activity {
         
         
     }
+    
+    
+    
 }
+
