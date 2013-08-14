@@ -37,7 +37,7 @@
         <activity android:name="com.alkliv.wheely.AllNearbyPlacesActivity"></activity>
         <activity android:name="com.alkliv.wheely.SinglePlaceActivity"></activity>
         <activity android:name="com.alkliv.wheely.GooglePlacesMapActivity"></activity>
-		
+		<activity android:name=".MapsAndPlacesActivity"></activity>
         
         <meta-data
                 android:name="com.google.android.maps.v2.API_KEY"

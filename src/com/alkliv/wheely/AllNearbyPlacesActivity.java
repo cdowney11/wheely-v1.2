@@ -56,7 +56,7 @@ public class AllNearbyPlacesActivity extends ListActivity {
         buttonShowOnMaps.setOnClickListener(buttonShowOnMapsOnClickListener);
     }
 
-    private View.OnClickListener buttonShowOnMapsOnClickListener = new View.OnClickListener(){
+    public View.OnClickListener buttonShowOnMapsOnClickListener = new View.OnClickListener(){
 
         @Override
         public void onClick(View v) {
@@ -79,7 +79,7 @@ public class AllNearbyPlacesActivity extends ListActivity {
         }
     };
 
-    class GetGooglePlacesInfoTask extends AsyncTask<Double, String, String> {
+    public class GetGooglePlacesInfoTask extends AsyncTask<Double, String, String> {
 
         @Override
         protected void onPostExecute(String s) {

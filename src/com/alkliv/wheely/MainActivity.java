@@ -5,6 +5,8 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.location.Location;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -12,11 +14,11 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.gson.Gson;
 import com.hintdesk.core.CoreConstants;
 import com.hintdesk.core.listeners.GPSUtilLocationListener;
 import com.hintdesk.core.utils.GPSUtil;
@@ -35,7 +37,6 @@ public class MainActivity extends Activity {
         initializeVariables();
         ActionBar ab = getActionBar(); 
 		ab.setDisplayShowTitleEnabled(false);
-		
     }
     
     
