@@ -15,6 +15,7 @@ import org.apache.http.message.BasicNameValuePair;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Html;
@@ -46,8 +47,15 @@ public class SinglePlaceActivity extends Activity {
         Log.d(TAG, "after setContentView");
         new LoadPlaceDetailsTask().execute(getIntent().getStringExtra(ConstantValues.EXTRA_REFERENCE));
         
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+        String placeref = extras.getString(ConstantValues.EXTRA_REFERENCE);
+        Log.d(TAG, "getting reference = " + placeref);
+        
+        //see this tutorial http://stackoverflow.com/questions/9900834/how-to-pass-variables-in-and-out-of-asynctasks
+        
         final ImageButton btn1=(ImageButton)findViewById(R.id.btn_1);
-        final ImageButton btn2=(ImageButton)findViewById(R.id.btn_2);
+        
         final Button button = (Button) findViewById(R.id.button_sd);
         Log.d(TAG, "Before setOnClickListener");
         
@@ -56,11 +64,11 @@ public class SinglePlaceActivity extends Activity {
             public void onClick(View v) {
             	//Perform an action on click
             	Log.d(TAG, "inside onClick(View v)");
-            	postData();
+            	//Log.d(TAG, "printing place_id inside onClick = " + place_id);
+            	postData("300", "2");
             	Log.d(TAG, "after calling postData()");
             }
         }); //end of button set on click
-
 
         btn1.setOnClickListener(new View.OnClickListener()
         {
@@ -73,21 +81,15 @@ public class SinglePlaceActivity extends Activity {
             }
         });
         
-        btn2.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View v)
-            {
-                // Your Code Here....
-            	Log.d(TAG, "inside on THIRD onClick(View v)");
-            	Toast toast = Toast.makeText(getApplicationContext(), "Σημειώσατε το μέρος ως προσεγγίσιμο! :-)",  Toast.LENGTH_SHORT);
-                toast.show();
-            }
-        });
-    
+
     }
     
-   public void postData() {
+   public void postData(final String placeidvar, final String accessin) {
         
+	   		Log.d(TAG, "placesidvar = ");
+	   		Log.d(TAG, String.valueOf(placeidvar));
+	   		Log.d(TAG, "access in = ");
+	   		Log.d(TAG, String.valueOf(accessin));
             Log.d(TAG, "just got inside postData()");
             Thread thread = new Thread(new Runnable(){
                 @Override
@@ -103,8 +105,8 @@ public class SinglePlaceActivity extends Activity {
                         	Log.d(TAG, "try adding DATA - list value pairs");
                             // Add your data
                             List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
-                            nameValuePairs.add(new BasicNameValuePair("placeid", "155"));
-                            nameValuePairs.add(new BasicNameValuePair("accessibility", "3"));
+                            nameValuePairs.add(new BasicNameValuePair("placeid", placeidvar));
+                            nameValuePairs.add(new BasicNameValuePair("accessibility", accessin));
                             httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
                         //Your code goes here
                     	 // Execute HTTP Post Request
@@ -132,6 +134,11 @@ public class SinglePlaceActivity extends Activity {
 
     } 
 
+   public String getData()	{
+	   String zero="0";
+	   return zero;
+   }
+   
     class LoadPlaceDetailsTask extends AsyncTask<String, String, GooglePlaceDetails> {
         @Override
         protected void onPreExecute() {
@@ -143,13 +150,14 @@ public class SinglePlaceActivity extends Activity {
 
         @Override
         protected void onPostExecute(GooglePlaceDetails googlePlaceDetails) {
-            String name,address,phone,latitude,longitude;
+            String name,address,phone,latitude,longitude, place_id;
 
             name = address = phone=latitude = longitude = "not available";
             TextView textViewName = (TextView) findViewById(R.id.textViewName);
             TextView textViewAddress = (TextView) findViewById(R.id.textViewAddress);
             TextView textViewPhone = (TextView) findViewById(R.id.textViewPhone);
             TextView textViewLocation = (TextView) findViewById(R.id.textViewLocation);
+            
 
             if (googlePlaceDetails != null) {
 
@@ -158,12 +166,35 @@ public class SinglePlaceActivity extends Activity {
                 phone = googlePlaceDetails.getFormatted_Phone_Number();
                 latitude = String.valueOf(googlePlaceDetails.getGeometry().getLocation().getLat());
                 longitude = String.valueOf(googlePlaceDetails.getGeometry().getLocation().getLng());
+                place_id = googlePlaceDetails.getId();
+                Log.d(TAG, "google place getId = " + place_id);
+                final String finalplaceid = place_id;
+                
+                final ImageButton btn2=(ImageButton)findViewById(R.id.btn_2);
+                
+                btn2.setOnClickListener(new View.OnClickListener()
+                {
+                    public void onClick(View v)
+                    {
+                        // Your Code Here....
+                    	Log.d(TAG, "inside on THIRD onClick(View v)");
+                    	Toast toast = Toast.makeText(getApplicationContext(), "Σημειώσατε το μέρος ως προσεγγίσιμο! :-), and place id is " + finalplaceid,  Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+                });
+                
+                
+                
             }
             textViewName.setText(name);
             textViewAddress.setText(address);
             textViewPhone.setText(Html.fromHtml("<b>Phone:</b> " + phone));
             textViewLocation.setText(Html.fromHtml("<b>Latitude:</b> " + latitude + ", <b>Longitude:</b> " + longitude));
+            
             progressDialog.dismiss();
+            
+            
+            
             super.onPostExecute(googlePlaceDetails);    //To change body of overridden methods use File | Settings | File Templates.
         }
 

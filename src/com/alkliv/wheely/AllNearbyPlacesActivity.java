@@ -11,6 +11,7 @@ import android.app.ListActivity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -32,6 +33,7 @@ import com.hintdesk.core.utils.JSONHttpClient;
  */
 public class AllNearbyPlacesActivity extends ListActivity {
 
+	public String TAG = "alkis";
     private double latitude, longitude;
     private GooglePlace[] googlePlaces = null;
     private Button buttonShowOnMaps;
@@ -73,6 +75,7 @@ public class AllNearbyPlacesActivity extends ListActivity {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             String reference = ((TextView) findViewById(R.id.textViewReference)).getText().toString();
+            Log.d(TAG, "sending reference = " + reference);
             Intent intent = new Intent(AllNearbyPlacesActivity.this, SinglePlaceActivity.class);
             intent.putExtra(ConstantValues.EXTRA_REFERENCE, reference);
             startActivity(intent);
@@ -104,8 +107,8 @@ public class AllNearbyPlacesActivity extends ListActivity {
             List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
             nameValuePairs.add(new BasicNameValuePair("latitude", String.valueOf(params[0])));
             nameValuePairs.add(new BasicNameValuePair("longitude", String.valueOf(params[1])));
-            nameValuePairs.add(new BasicNameValuePair("radius", "100"));
-            nameValuePairs.add(new BasicNameValuePair("types", "cafe|restaurant|store"));
+            nameValuePairs.add(new BasicNameValuePair("radius", "1000"));
+            nameValuePairs.add(new BasicNameValuePair("types", "cafe|restaurant|store|hospital|school"));
             JSONHttpClient jsonHttpClient = new JSONHttpClient();
             googlePlaces = jsonHttpClient.Get(ConstantValues.GOOGLE_PLACES_URL, nameValuePairs, GooglePlace[].class);
             return null;
