@@ -9,7 +9,7 @@
     	android:id="@+id/buttonShowOnMaps"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Show on Maps..."             
+        android:text="Προβολή στον Χάρτη."             
         android:layout_alignParentBottom="true"/>    
     
     <ListView

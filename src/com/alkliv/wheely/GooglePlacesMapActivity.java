@@ -19,6 +19,9 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -97,7 +100,7 @@ public class GooglePlacesMapActivity extends Activity implements IFaceTaskDownlo
 				}
 			}
 		});        
-       
+      
         Intent intent = getIntent();
         
         // Drawing Current location in Google Map                

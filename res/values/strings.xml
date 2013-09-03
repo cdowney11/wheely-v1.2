@@ -19,7 +19,7 @@
     <string name="greenflag">greenflag</string>
     <string name="orangeflag">orangeflag</string>
     <string name="place_photo">Place Photo</string>
-    <string name="hnt_pavement">Enter your comment here</string>
+    <string name="hnt_pavement">Γράψτε το σχόλιό σας εδώ.</string>
     <string name="pavements">Pavements</string>
     <string name="radius_dialog_title">Distance in Meters</string>
     <string name="radius_title">Radius</string>

@@ -9,6 +9,7 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -39,6 +40,7 @@ public class MainActivity extends Activity implements android.location.LocationL
         // initializeVariables(); commented by GMK
         ActionBar ab = getActionBar(); 
 		ab.setDisplayShowTitleEnabled(false);
+		//getActionBar().setDisplayHomeAsUpEnabled(true);
 		
 		int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getBaseContext());		
 		
@@ -171,7 +173,8 @@ public class MainActivity extends Activity implements android.location.LocationL
 	@Override
 	public void onStatusChanged(String provider, int status, Bundle extras) {
 		// TODO Auto-generated method stub		
-	}		
+	}	
+
 	
 		
 	

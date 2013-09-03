@@ -3,12 +3,15 @@ package com.alkliv.wheely;
 import java.util.HashMap;
 import java.util.List;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v4.app.NavUtils;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -181,6 +184,13 @@ public class AllNearbyPlacesActivity extends Activity implements IFaceTaskDownlo
         mList = (ListView) findViewById(android.R.id.list);
         
         initializeComponent();
+        ActionBar ab = getActionBar(); 
+		ab.setDisplayShowTitleEnabled(false);
+		getActionBar().setDisplayHomeAsUpEnabled(true);
+		
+		ab.setDisplayShowTitleEnabled(false);
+		getActionBar().setDisplayHomeAsUpEnabled(true);
+		
         
     }   
     
@@ -270,5 +280,15 @@ public class AllNearbyPlacesActivity extends Activity implements IFaceTaskDownlo
             startActivity(intent);
         }
     };
-	 
+    
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+	    // Respond to the action bar's Up/Home button
+	    case android.R.id.home:
+	        NavUtils.navigateUpFromSameTask(this);
+	        return true;
+	    }
+	    return super.onOptionsItemSelected(item);
+	}
 }
