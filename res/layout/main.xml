@@ -12,18 +12,18 @@
         <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="Your current location is:"
+                android:text="Καλώς ήρθατε! Βρέθηκε η τοποθεσία σας:"
                 android:textStyle="bold" android:textSize="20dp" android:layout_marginBottom="30dp"/>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Not available"
+                android:text="Μη διαθέσιμες πληροφορίες."
                 android:id="@+id/textViewLocation" android:layout_gravity="center"/>
     </LinearLayout>
     <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Search near by..."
+            android:text="Αναζήτηση Σημείων"
             android:id="@+id/buttonSearchNearby" android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>
