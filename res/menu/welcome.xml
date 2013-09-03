@@ -25,18 +25,9 @@
           android:showAsAction="always"
           android:onClick="onOptionsItemSelected" />
 	
-	<item android:id="@+id/pavements"          
+	<item android:id="@+id/pavements" 
+	      android:icon="@drawable/ic_action_p"         
           android:title="@string/pavements"
-          android:showAsAction="never" />
-
-	
-	
-	
-	
-	<!-- 
-    <item android:id="@+id/refresh"
-          android:icon="@drawable/ic_navigation_refresh"
-          android:title="@string/refresh"
-          android:showAsAction="always" /> -->
+          android:showAsAction="always" />
 
 </menu>
