@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.alkliv.wheely.AllNearbyPlacesActivity.GetGooglePlacesInfoTask;
 import com.alkliv.wheely.vo.GooglePlace;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -65,7 +64,6 @@ public class MapsAndPlacesActivity extends Activity {
             markerOptions.title(googlePlace.getName());
             googleMap.addMarker(markerOptions);
         }
-
 
     }
 

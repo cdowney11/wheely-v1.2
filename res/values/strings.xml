@@ -17,5 +17,22 @@
     <string name="self_destruct">Self Destruct</string>
     <string name="redflag">redflag</string>
     <string name="greenflag">greenflag</string>
+    <string name="orangeflag">orangeflag</string>
+    <string name="place_photo">Place Photo</string>
+    <string name="hnt_pavement">Enter your comment here</string>
+    <string name="pavements">Pavements</string>
+    <string name="radius_dialog_title">Distance in Meters</string>
+    <string name="radius_title">Radius</string>
+    <string name="radius_summary">Defines the distance (in meters) within which to return Place results</string>
+    <string name="listview_no_results">No Results</string>
+    <string name="pavement_show_in_map">Show in map</string> 
+    <string name="place_type">Place Types</string>   
+    <string name="place_type_summary">Select types of Places to be searched</string>
+    <string name="place_type_all">All</string>
+    <string name="place_type_cafe">Cafe</string>
+    <string name="place_type_restaurant">Restaurant</string>
+    <string name="place_type_store">Store</string>
+    <string name="place_type_school">School</string>
+    <string name="place_type_hospital">Hospital</string>
     
 </resources>

@@ -9,6 +9,6 @@ package com.alkliv.wheely;
 
 public final class Manifest {
     public static final class permission {
-        public static final String MAPS_RECEIVE="com.hintdesk.Google_Maps_example.permission.MAPS_RECEIVE";
+        public static final String MAPS_RECEIVE="com.alkliv.wheely.permission.MAPS_RECEIVE";
     }
 }

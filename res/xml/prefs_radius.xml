@@ -1,0 +1,48 @@
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android">
+        
+    <EditTextPreference
+    	android:key="radius_preference"         
+    	android:inputType="number"
+    	android:defaultValue="2000"
+        android:title="@string/radius_title"
+        android:summary="@string/radius_summary"                
+        android:dialogTitle="@string/radius_dialog_title" /> 
+        
+    <PreferenceScreen
+        android:title="@string/place_type"
+        android:summary="@string/place_type_summary" >
+        
+        <CheckBoxPreference 
+            android:key="place_type_all_preference"
+            android:title="@string/place_type_all"
+            android:defaultValue="true" />
+        
+        <CheckBoxPreference 
+            android:key="place_type_cafe_preference"
+            android:title="@string/place_type_cafe" 
+            android:defaultValue="true" />
+        
+        <CheckBoxPreference 
+            android:key="place_type_restaurant_preference"
+            android:title="@string/place_type_restaurant" 
+            android:defaultValue="true" />        
+        
+        <CheckBoxPreference 
+            android:key="place_type_store_preference"
+            android:title="@string/place_type_store"
+            android:defaultValue="true" />
+        
+        <CheckBoxPreference 
+            android:key="place_type_school_preference"
+            android:title="@string/place_type_school"
+            android:defaultValue="true" />
+        
+        <CheckBoxPreference 
+            android:key="place_type_hospital_preference"
+            android:title="@string/place_type_hospital"
+            android:defaultValue="true" />        
+        
+    </PreferenceScreen>
+
+</PreferenceScreen>
