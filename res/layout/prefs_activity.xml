@@ -9,5 +9,4 @@
         android:layout_height="match_parent"
         android:id="@+id/pref_fragment_radius"
         class="com.alkliv.wheely.NearbyPreferenceActivity$PrefsRadiusFragment" />
-
 </LinearLayout>

@@ -235,7 +235,7 @@ public class AllNearbyPlacesActivity extends Activity implements IFaceTaskDownlo
         mList.setOnItemClickListener(listViewOnItemClickListener);
 
         mProgressDialog = new ProgressDialog(AllNearbyPlacesActivity.this);
-        mProgressDialog.setMessage("Loading nearby places...");        
+        mProgressDialog.setMessage("Αναζήτηση γύρω σημείων...");        
         
         mButtonShowOnMaps = (Button)findViewById(R.id.buttonShowOnMaps);
         

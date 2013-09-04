@@ -176,12 +176,13 @@ containing a value of this type.
         public static final int common_signin_btn_text_pressed_light=0x7f02001c;
         public static final int ic_action_p=0x7f02001d;
         public static final int ic_action_search=0x7f02001e;
-        public static final int ic_launcher=0x7f02001f;
-        public static final int ic_navigation_refresh=0x7f020020;
-        public static final int location_map=0x7f020021;
-        public static final int location_place=0x7f020022;
-        public static final int markergreen=0x7f020023;
-        public static final int markerred=0x7f020024;
+        public static final int ic_issues=0x7f02001f;
+        public static final int ic_launcher=0x7f020020;
+        public static final int ic_navigation_refresh=0x7f020021;
+        public static final int location_map=0x7f020022;
+        public static final int location_place=0x7f020023;
+        public static final int markergreen=0x7f020024;
+        public static final int markerred=0x7f020025;
     }
     public static final class id {
         public static final int action_settings=0x7f06001f;

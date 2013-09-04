@@ -202,7 +202,7 @@ public class GooglePlacesMapActivity extends Activity implements IFaceTaskDownlo
     	MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(currentLatLng);        
         markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
-        markerOptions.title("You are here !!!");
+        markerOptions.title("User.");
         Marker marker = mGoogleMap.addMarker(markerOptions);
         marker.showInfoWindow();
         
@@ -249,7 +249,8 @@ public class GooglePlacesMapActivity extends Activity implements IFaceTaskDownlo
         	private void addPavement(String message){    
             	MarkerOptions markerOptions = new MarkerOptions();
             	markerOptions.position(mPavementLocation);
-            	markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN));
+            	//markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN));
+            	markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_issues));
             	markerOptions.title(ConstantValues.PAVEMENT_MARKER_TITLE);
             	markerOptions.snippet(message);
             	mGoogleMap.addMarker(markerOptions);
